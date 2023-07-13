@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: "node-app"
-        image:  naresh2603/app:v2
+        image:  dhinesh1311/app:v2
         imagePullPolicy: Always
         ports:
         - containerPort:  3000
