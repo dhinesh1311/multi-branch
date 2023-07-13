@@ -41,9 +41,9 @@ pipeline {
             steps {
                 script {
                     withKubeCredentials(kubectlCredentials: [[ credentialsId: 'kubernetes', namespace: 'ms' ]]) {
+                        sh 'kubectl create namespace ms'
                         sh 'kubectl apply -f kube.yaml'
                         sh 'kubectl get pods -o wide'
-                        sh 'kubectl create namespace ms'
                     }
                 }
             }
