@@ -40,10 +40,10 @@ pipeline {
         stage('Deploy on k8s') {
             steps {
                 script {
+                    sh 'kubectl create namespace ms'
                     withKubeCredentials(kubectlCredentials: [[ credentialsId: 'kubernetes', namespace: 'ms' ]]) {
                         sh 'kubectl apply -f kube.yaml'
                         sh 'kubectl get pods -o wide'
-                        sh 'kubectl create namespace ms'
                     }
                 }
             }
