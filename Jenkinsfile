@@ -21,7 +21,7 @@ pipeline {
         stage('Docker Build') {
             steps {
                 script {
-                    sh 'docker build -t dhinesh1311/multi:v2 .'
+                    sh 'docker build -t dhinesh1311/app:v2 .'
                     sh 'docker images'
                 }
             }
@@ -31,8 +31,8 @@ pipeline {
                 script {
                     withCredentials([string(credentialsId: 'dockerPass', variable: 'dockerPassword')]) {
                         sh "docker login -u dhinesh1311 -p ${dockerPassword}"
-                        sh 'docker push dhinesh1311/multi:v2'
-                        sh 'docker rmi dhinesh1311/multi:v2'
+                        sh 'docker push dhinesh1311/app:v2'
+                        sh 'docker rmi dhinesh1311/app:v2'
                     }
                 }
             }
