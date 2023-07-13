@@ -27,7 +27,7 @@ pipeline {
         steps{
           script{
             sh 'docker build -t dhinesh1311/app:v1 .'
-            //sh 'docker images'
+            sh 'docker images'
           }
         }
       }
