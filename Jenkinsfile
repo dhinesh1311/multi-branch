@@ -37,7 +37,7 @@ pipeline {
             withCredentials([string(credentialsId: 'dockerPass', variable: 'dockerPassword')]) {
               sh "docker login -u dhinesh1311 -p ${dockerPassword}"
               sh 'docker push dhinesh1311/app:v1'
-              sh 'docker rmi dhinesh1311/app:v1'
+              //sh 'docker rmi dhinesh1311/app:v1'
             }
           }
         }
