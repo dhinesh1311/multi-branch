@@ -7,7 +7,7 @@ FROM tomcat:8
 COPY target/onlinebookstore.war /usr/local/tomcat/webapps/
 
 # Expose the default Tomcat port
-#EXPOSE 8080
+EXPOSE 8080
 
 # Start Tomcat when the container launches
-#CMD ["catalina.sh", "run"]
+CMD ["catalina.sh", "run"]
